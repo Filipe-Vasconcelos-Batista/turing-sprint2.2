@@ -101,5 +101,43 @@ const todos=[
 ]
 console.log(todos[1].text);
 //create a json with the variables
+//for example to send to a server or something like that~
+//you can do that directely with stringify()
 const todoJSON=JSON.stringify(todos);
 console.log(todoJSON)
+
+//loops
+//for loops
+//writes for() and ibnside the (it takes 3 parameters):
+//assignement of the interatable/variable for(let i=0)
+//condition that needs to be met for(let i=0; i<10)
+//last is the increment for(let i=0;i<10; i++)
+//every parts is divided by a semicolon ;
+for(let i= 0; i<10;i++){
+    console.log(`For Loop Number: ${i}`);
+}
+//notice that the condition above is met because 
+//its i smaller than ten, not equal
+
+//While Loops
+//the major diferences is that you set
+//the variable outside of the loop
+let i=0
+//the loop itself only takes the condition while(i<10)
+while(i<10){
+    console.log(`While Loop Number: ${i}`);
+//and the incrementations goes inside the loop itself
+    i++;
+}
+//but if we want to loop through the arrays?
+//lets use the todolist above as an example:
+//lets use the For Loop by only changing the condition:
+for(let i= 0; i<todos.length;i++){
+    //we use the length method because it will give us
+    //the number of items in the array wish means
+    //even if you change the array in the future this function would still work
+    console.log(todos[i].text);
+    //in this case we are the .text method to print only the strings
+    //delet it  and it prints in the console every single element of the array
+}
+
