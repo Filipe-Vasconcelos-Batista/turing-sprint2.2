@@ -217,9 +217,127 @@ if(newx=="10"){
 }
 //same results
 //to match also data types we have the sttrict equality operator ===
+
 if(newx===10){
     console.log("x is with a strict equality the num 10")
 }
-else{
-    console.log("x is 10???")
+//else if statement is checked if your if statements and else if that came before
+//do are not true
+else if(newx < 10){
+console.log("x is greater than 10")
 }
+//try adding a true statement here for example x<11 to see what its 
+//logged
+//else ads something for the program to do none of the if statesments
+//are true
+else{
+    console.log("x smaller than 10???")
+}
+
+//lets now learn multiple conditions
+let newy=10;
+//lets use the same logic as b4
+//you can use the logical OR operator: || so if one of these is correct 
+//it will print (or is correct)
+if(newx>5 || newy>10 ){
+    console.log("OR is correct")
+}//you can also use the logical AND operator: &&
+//in that case in order for the next line to be printed both need to be true
+if(newx>5 && newy>10){
+    console.log("AND is correct")
+}// you can also use the ternary operator
+//wish allows to assign variables based on a condition
+//in this case we will assign a variable named color based on the value 
+//of  variable named colorx
+//we start by defining the colorx
+let colorx=11;
+//then we make the variable color: let color
+//we put the assign signal in fron as is usual: let color=
+//and here were it is diferent, we put the if statement:
+//let color=colorx>10
+//and we add a ? wish will let js know that it is a conditional:
+//let color = colorx>10 ?
+//we then add the first value to assign : let color = colorx> 10 ? "red"
+//then we add a : wich works like an else statement
+//let color = colorx> 10 ? "red":
+//and we end by adding the alternative value to assign if the first
+//condition is not true:
+let color = colorx> 10 ? "red": "blue";
+console.log(color)
+//what we have writen above is the equivalent to:
+if (colorx >10){
+    let color="red";
+    console.log(color);
+}else{
+    let color="blue";
+    console.log(color);
+}
+//but in a lot faster and readable way
+//switches
+//switches are another way to avaluate a condition
+//lets use the example above
+// we start by using the switch(): switch()
+//inside we put the variable name we want to verify: switch(color)
+//then we write the case followed by the conditions:
+//switch(color){case "red":
+//after that you input what you want it to do at that point (ill use console logs as allways)
+switch(color){
+    case "red":
+        console.log("color is red")
+        break
+    case "blue":
+        console.log("color is blue")
+        break
+    //each case works as its own else if
+    //for the else in this statement we use the default
+    //as if none of the cases are true
+    //then it will default to this option
+    default:
+        console.log("color not red or blue")
+        break
+}
+
+//Functions
+//lets start by creating a function that adds 2 numbers
+//with the function keyword:function addNum()
+//inside those parentesis you can put your parameters, in this example
+//the numbers to be added: function addNum(num1,num2)
+//open the brackets and write the output of the funtion inside of them
+//in this case again ill use a console log for demonstration
+function addNum(num1,num2){
+    console.log(num1+num2)
+}
+//nothing happened at this point in the console
+//that is because we have not called our function for that we write
+//the functioin name with the two parameter inside the parentesis:
+addNum(1,2)
+//what happens if we call it without parameters??:
+addNum()
+//youll notice that you have just gotten a NaN
+//Not a number
+// if you wanna know more about NaN consult : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN?retiredLocale=de
+//to avoid this we can set up a default value
+//by adding that default value after = in each of the parameters:
+function addNumWithDefault(num1=1,num2=1){
+    console.log(num1+num2)
+}
+
+//and if you call it without arguments:
+addNumWithDefault()
+
+//most cases in reality you are gonna use a console.log
+//youll want your function to return something when is called
+//like so:
+function addNumWithReturn(num1=1,num2=1){
+    return(num1+num2)
+}
+//if you call upon this function, youll notice that nothing gets
+//logged in the console:
+addNumWithReturn(4,3)
+
+//so we need to wrap it in a console log to print that result
+console.log(`this is the wraped in log result : ${addNumWithReturn(4,3)
+}`)
+//Arrow Function
+//introducted in es6 or es 2015
+//they have the following structure:
