@@ -345,12 +345,18 @@ console.log(`this is the wraped in log result : ${addNumWithReturn(4,3)
 //then add a equal sign: const addNumArrow =
 //the parameters: const addNumArrow= (num1=1,num2=1)
 //after that add a fat arrow =>:const addNumArrow= (num1=1,num2=1)=>
-//and the rest is the same as before:
+//and the rest is the same as before
 const addNumArrow= (num1=1,num2=1) =>{
     return(num1+num2)
 }
 console.log(addNumArrow())
-// and this works 
-//try it for yourself
-//but since we only have one expression we can clean up a lot more
+// and  it works
+//but still since we only have 1 expression we can trim it down a lot more
 //we can remove the {}
+//to return you dont need to use the return keyword delete it!!!
+//y«if you only use one parameter you dont need the parentesys of the parameter
+//try to delete one parameter and the parentesys to check(it should print the value without add)
+//it will look like this:
+//const addNumArrow= num1 =>num1+ 5;
+
+//console.log(addNumArrow(1))
