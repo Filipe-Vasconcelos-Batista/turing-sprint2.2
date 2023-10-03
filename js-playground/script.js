@@ -19,7 +19,7 @@ console.log(typeof isCool);
 console.log("My name is " + name + " and I am " + age);
 //template string
 console.log(`My name is ${name} and Im ${age} years old`);
-console.log(`lets fucking go`);
+console.log(`lets go`);
 
 //strings properties and methods
 const s="Hello World!";
@@ -137,7 +137,45 @@ for(let i= 0; i<todos.length;i++){
     //the number of items in the array wish means
     //even if you change the array in the future this function would still work
     console.log(todos[i].text);
-    //in this case we are the .text method to print only the strings
-    //delet it  and it prints in the console every single element of the array
+    //in this case we are the .text  to print only the strings
+    //delete it  and it prints in the console every single element of the array
+}
+// but the are better methods to loop through an array such as:
+//For Of Loop
+//the structure is similar to a for loop but more readable
+for(let todo of todos){
+    //lets break this apart:
+    //let todo is setting up a variable, like let i=0
+    //so you can call it whatever you like, usually its used a similar name 
+    //to make it more readable
+    //of todos  that is the name of the array signaling thats what you want to loop through
+    //what it means is that you want to go through every element of the array of that name
+    console.log(`For Of Loop: ${todo.text}`)
 }
 
+//we also have what is called the high order array methods:
+//forEach loops through the array as the above methods
+//first it takes the array name: todos
+//next the method: todos.forEach()
+//inside the brackets it takes a function: todos.forEach(function(){})
+//inside that functions brackets it takes the variable name:todos.forEach(function(todo){})
+todos.forEach(function(todo){
+    console.log(`For Each Loop: ${todo.text}`)
+});
+//you can also do these with arrow functions:
+
+//map allows us to creat a new array from an existing array
+//(prety usefull because many times you dont want to lter the 
+//original array just manipulate some data)
+//its formated pretty much the same way as the one before
+//just change the .forEach to .map:todos.map(function(todo){
+//but because it returns an array you have to assign a variable:
+// const todoText= todos.map(function(todo){})
+//the goal here is to loop through and return an array of just the text/string values
+const todoText = todos.map(function(todo){
+    return todo.text
+});
+console.log(`map: ${todoText}`)
+//notice how it returns an array of just the text strings
+
+//filter allows to create a new array based on a condition
