@@ -341,3 +341,16 @@ console.log(`this is the wraped in log result : ${addNumWithReturn(4,3)
 //Arrow Function
 //introducted in es6 or es 2015
 //they have the following structure:
+// we start by naming it as a variable: const addNumArrow
+//then add a equal sign: const addNumArrow =
+//the parameters: const addNumArrow= (num1=1,num2=1)
+//after that add a fat arrow =>:const addNumArrow= (num1=1,num2=1)=>
+//and the rest is the same as before:
+const addNumArrow= (num1=1,num2=1) =>{
+    return(num1+num2)
+}
+console.log(addNumArrow())
+// and this works 
+//try it for yourself
+//but since we only have one expression we can clean up a lot more
+//we can remove the {}
