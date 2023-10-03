@@ -173,9 +173,53 @@ todos.forEach(function(todo){
 // const todoText= todos.map(function(todo){})
 //the goal here is to loop through and return an array of just the text/string values
 const todoText = todos.map(function(todo){
-    return todo.text
+    return todo.text;
 });
 console.log(`map: ${todoText}`)
 //notice how it returns an array of just the text strings
 
 //filter allows to create a new array based on a condition
+//for this example lets try to make an array of only the completed todos
+//as in the third element is isCompleted:true
+//same bases as Before, change map to .filter
+//const todoText2 = todos.map(function(todo)
+//inside the loop you put your condition so it knows what to assign to
+//the new array:
+const todoCompleted = todos.filter(function(todo){
+    return todo.isCompleted === true;
+});
+console.log(`filter: ${todoCompleted}`)
+
+//now you can also combo/chain these methods lets say, you only want to
+//assign to the new array the text?
+const todoCompleted2 = todos.filter(function(todo){
+    return todo.isCompleted === true;
+}).map(function(todo){
+    return todo.text
+});
+console.log(`filter version 2: ${todoCompleted2}`)
+// notices that all the diferent methods are inside the first bracket()
+//you can chain/combo a lot of stuff 
+
+//Conditionals
+//lets start with the simple if statement
+let newx=10;
+//
+if(newx==10){
+    console.log("x is 10")
+}
+//notice that the equality operator == does not match the data 
+//types if its a string or a number it mnakes no diference
+//so changing that to a string makes no diference :
+//
+if(newx=="10"){
+    console.log("x is 10?")
+}
+//same results
+//to match also data types we have the sttrict equality operator ===
+if(newx===10){
+    console.log("x is with a strict equality the num 10")
+}
+else{
+    console.log("x is 10???")
+}
