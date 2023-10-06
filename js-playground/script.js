@@ -106,8 +106,10 @@ console.log(todos[1].text);
 const todoJSON=JSON.stringify(todos);
 console.log(todoJSON)
 
-//loops
-//for loops
+
+//LOOPS
+
+//For loops
 //writes for() and ibnside the (it takes 3 parameters):
 //assignement of the interatable/variable for(let i=0)
 //condition that needs to be met for(let i=0; i<10)
@@ -273,7 +275,8 @@ if (colorx >10){
     console.log(color);
 }
 //but in a lot faster and readable way
-//switches
+
+//SWITCHES
 //switches are another way to avaluate a condition
 //lets use the example above
 // we start by using the switch(): switch()
@@ -360,3 +363,142 @@ console.log(addNumArrow())
 //const addNumArrow= num1 =>num1+ 5;
 
 //console.log(addNumArrow(1))
+
+
+//Error Handling in javascript
+/** 
+ * Try{} lets you test a block of code for error
+ * catch handles the error
+ * throw creates costum error
+ * finnaly lets you exectute code after try and catch
+*/
+try{//to use this the javascript must be correct it only catches runtime errors
+    console.log("start of the try runs");
+    unicycle;//does not exist starts error
+    console.log("end of the try runs -- never reached")
+}
+ catch(err){//the error makes it jump to this 
+    console.log("error has ocurred" + err.stack); //.stack is optional
+}finally{//the finnaly allows the program to continue
+    console.log("This will allways run");
+}
+console.log("... then the execution continues");
+/** lets create another example for the throw  */
+
+let json="{'age':30}";
+
+try{
+let user = JSON.parse(json);
+if (!user.name){
+    throw new SyntaxError("Incomplete data: no name");
+}
+console.log(user.name);
+}catch(e){
+    console.log("JSON Error: "+ e);
+}
+/**
+ * While using your JavaScript playground, try to determine the following:
+
+    What occurs when you throw an error (throw new Error('Oops!')) 
+    within the catch block?
+    hrowing an error within the catch block: If you throw an error 
+    within a catch block, the error
+     will not be caught by the same try-catch-finally block. 
+     It will need to be caught by an outer try-catch block if
+      one exists, otherwise it will terminate the execution of 
+      the current function.
+
+    What transpires if you return a value in the try block and 
+    also in the finally block?
+    Returning a value in the try and finally blocks: If you
+     return a value in both the try and finally blocks, the value
+      from the finally block will be returned. The finally block
+       always executes after the try and catch blocks, and its
+        return value will override any previous return values.
+
+    What happens if you throw an error in the catch block and 
+    return a value in the finally block?
+    Throwing an error in the catch block and returning a value
+     in the finally block: If you throw an error in the catch
+      block and return a value in the finally block, the function 
+      will return the value from the finally block. This is because
+       the finally block always executes, regardless of what happens 
+       in the try and catch blocks.
+
+    Is it possible to access a variable declared in the 
+    try block from the catch or finally block?
+    Accessing a variable declared in the try block 
+    from the catch or finally block: Variables declared within a
+     block (using let or const) are not accessible outside of that
+      block due to JavaScript’s block scoping rules. So, you
+       cannot access a variable declared in the try block from 
+       the catch or finally blocks. However, if you declare a variable
+        without let or const (or with var), it will be hoisted 
+        and can be accessed from anywhere within the function.
+
+ */
+/*
+        def get_full_name(first_name, last_name):
+            return f"{first_name} {last_name}"
+*/
+const getFullName=(firstName, lastName)=> `${firstName} ${lastName}`;
+console.log(getFullName("Filipe","Batista"))
+/*
+        def wrap_in_an_object(first_name, last_name):
+            return {'firstName': first_name, 'lastName': last_name}
+*/
+const wrapInAnObject=(firstName,lastName) =>`firstName: ${firstName},  lastName: ${lastName}`
+console.log(wrapInAnObject("Filipe","Batista"))
+/*
+        def join_arrays(array1, array2):
+            return array1 + array2
+*/
+const joinArrays=(arr1 , arr2)=> arr1.concat(arr2)
+console.log(joinArrays([1,2],[3,4]))
+/*
+        def contains_value(array, value):
+            return value in array
+*/
+const containsValue=(arr, value)=> arr.indexOf(value)
+console.log(containsValue([1,2,3,4,5,6],5))
+/*.
+        def multiply(a, b=1):
+            return a * b
+*/
+const multiply= (num1,num2=1)=> num1*num2;
+console.log(multiply(4))
+/*
+            def to_person_object(first_name, last_name, age):
+            return {
+                'firstName': first_name,
+                'lastName': last_name,
+                'age': age,
+            }
+*/
+
+/*
+        def create_object(key, value):
+            return {key: value}
+*/
+/*
+        def print_array_elements(array):
+            for element in array:
+                print(element)
+*/
+/*
+        def print_object_properties(obj):
+            for key, value in obj.items():
+                print(f"{key}: {value}")
+*/
+/*
+        class Person:
+            def __init__(self, name):
+                self.name = name
+        
+            def say_hello(self):
+                print(f"Hello, my name is {self.name}")
+*/        
+/*        
+        person = Person('Jane')
+        person.say_hello()
+*/        
