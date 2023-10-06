@@ -481,11 +481,14 @@ console.log(toPersonObject("Filipe","Batista","32"))
         def create_object(key, value):
             return {key: value}
 */
+const createObject=(key, value)=> `${key}: ${value}`;
+console.log(createObject("the cone","ket"))
 /*
         def print_array_elements(array):
             for element in array:
                 print(element)
 */
+
 /*
         def print_object_properties(obj):
             for key, value in obj.items():
@@ -495,11 +498,75 @@ console.log(toPersonObject("Filipe","Batista","32"))
         class Person:
             def __init__(self, name):
                 self.name = name
-        
+
             def say_hello(self):
                 print(f"Hello, my name is {self.name}")
-*/        
-/*        
+*/
+/*
         person = Person('Jane')
         person.say_hello()
-*/        
+*/
+
+/**Directions for further research (2 hours+)
+
+    What would happen if you would not use any keyword for variable
+     declaration. For example x = 20. Could you still access this
+      variable?
+      Variable declaration without a keyword: If you declare a variable
+       without using any keyword (like var, let, or const), it becomes
+        a global variable, even if it’s declared inside a function. This
+         means you can access it from anywhere in your code. However,
+          this is generally considered bad practice because 
+      it can lead to naming conflicts and make your code harder to 
+      understand and debug.
+    
+      What happens if you miss a semicolon? What if you add multiple 
+    semicolons?
+    Missing or multiple semicolons: In JavaScript, semicolons
+     are used to separate statements, but they are often optional 
+     due to a feature called Automatic Semicolon Insertion (ASI). 
+     If you miss a semicolon, JavaScript will automatically insert 
+     one for you in most cases. However, there are some cases where 
+     missing a semicolon can cause errors or unexpected behavior, 
+     so it’s generally recommended to always include them. If you 
+     add multiple semicolons, JavaScript will simply 
+    treat the extra semicolons as empty statements and ignore them.
+    
+    Can you use trailing commas in JavaScript? Should you?
+    Trailing commas: Yes, you can use trailing commas in JavaScript.
+     They are usually used when listing items line by line to make 
+     it easier to add new items without having to worry about adding 
+     or removing commas. However, they were not allowed in older versions 
+     of JavaScript (ES5 and below), so if your code needs to run in
+      older browsers, you should avoid using them.
+    
+      What if you do not explicitly return a value from a function?
+       What value will be returned?
+No explicit return from a function: If you do not explicitly return
+ a value from a function in JavaScript, the function will
+  return undefined by default.
+    What is the difference between value and reference in JavaScript?
+    Value vs reference: In JavaScript, primitive types (like numbers,
+         strings, booleans) are passed by value, which means that
+          if you assign a variable to another variable, any changes to
+           one will not affect the other. On the other hand, objects 
+           (including arrays and functions) are passed by reference, 
+           which means that if you assign an object to another variable,
+            they both refer to the same object and changes to one will 
+            affect the other.
+    (Optional/Advanced) What is the event loop in JS?
+Event loop: The event loop is a key component of JavaScript’s concurrency
+ model and is responsible for executing code, collecting and
+  processing events, and executing queued sub-tasks. It allows JavaScript 
+  to be asynchronous and have non-blocking I/O, despite being 
+  single-threaded. Here’s how it works:
+
+    The call stack reads and executes tasks one by one.
+    When an async function is called (like an API call), it’s sent to the Web API.
+    Once the async task is done, it’s sent over to the task queue.
+    The event loop constantly checks if the call stack is empty.
+    If it is, it takes the first task from the task queue and pushes it onto the call stack.
+    This process continues indefinitely (hence “loop”). This model allows JavaScript to handle high throughput with its single-threaded model.
+
+
+    */
