@@ -6,4 +6,4 @@ Write a function sort that takes an array filled with 3 numbers and returns thes
 Example: sort([2, 3, 1]) should return [1, 2, 3].*/
 const sort= array =>array.sort()
 
-console.log(sorte([3,1,2]))
+console.log(sort([3,1,2]))
