@@ -475,7 +475,8 @@ console.log(multiply(4))
                 'age': age,
             }
 */
-
+const toPersonObject=(firstName, lastName,age)=>`firstName: ${firstName}, lastName: ${lastName}, age: ${age}`
+console.log(toPersonObject("Filipe","Batista","32"))
 /*
         def create_object(key, value):
             return {key: value}
